@@ -1,3 +1,7 @@
+import { initInputs } from "./ui/form";
+
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Naija rates");
+  const _inputs = initInputs((params) => {
+    if (params) console.log(params);
+  });
 });
