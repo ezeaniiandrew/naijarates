@@ -39,3 +39,10 @@ export interface Fintech {
   name: string;
   products: FintechProduct[];
 }
+
+export interface ModalConfig {
+  title: string;
+  messages: string[];
+}
+
+export type ValidationContext = "calculator" | "filter";
