@@ -1,0 +1,2 @@
+pnpm exec eslint src/ --max-warnings=0
+pnpm exec tsc --noEmit --strict
