@@ -37,3 +37,21 @@ export function calculateDaysDifference(targetDateStr: string): number {
   const diffTime = utcTarget - utcToday;
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
+
+export function requireChild<T extends HTMLElement = HTMLElement>(
+  parent: HTMLElement | DocumentFragment,
+  selector: string,
+): T {
+  const el = parent.querySelector(selector) as T | null;
+  if (!el) throw new Error(`Required child element missing: ${selector}`);
+  return el;
+}
+
+export function formatCurrency(amount: number): string {
+  return new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(amount);
+}
