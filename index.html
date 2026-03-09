@@ -14,9 +14,185 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>Naija rates</h1>
+    <div class="container">
+      <header>
+        <h1>Naija Rates</h1>
+        <p class="subtitle">
+          Compare the best savings rates from top Nigerian fintechs
+        </p>
+      </header>
+
+      <form id="calculator-form" class="calculator-inputs">
+        <div class="input-group">
+          <label for="amount">How much do you want to save?</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            id="amount"
+            name="amount"
+            placeholder="e.g. 500,000"
+            value="100,000"
+          />
+          <span id="amount-error" class="input-error-text"></span>
+        </div>
+
+        <div class="input-group">
+          <label for="maturity-date-picker">Duration / Maturity Date</label>
+          <div class="duration-row">
+            <div class="duration-selector">
+              <span id="selected-duration-text">365</span>
+            </div>
+            <div class="date-picker-wrapper">
+              <input
+                type="date"
+                id="maturity-date-picker"
+                name="maturityDate"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="frequency">How often do you want to save?</label>
+          <select id="frequency" name="frequency">
+            <option value="onetime">One-time</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+        </div>
+
+        <button type="submit" id="calculate-btn" class="calculate-btn">
+          Calculate Rates
+        </button>
+      </form>
+
+      <div class="filters-bar">
+        <label>Filter by Fintech:</label>
+        <div id="fintech-filter" class="fintech-filter-grid">
+          <!-- checkboxes -->
+        </div>
+      </div>
+
+      <main id="results" class="results-grid">
+        <p class="results-message with-margin">
+          Enter your savings details and click "Calculate Rates" to see
+          comparing options.
+        </p>
+      </main>
+
+      <div class="disclaimer">
+        <p>
+          <strong>Disclaimer:</strong> Interest rates and product features are
+          manually sourced from the respective fintech mobile applications.
+          Features and rates are subject to change by the providers at any time.
+          Outcomes are estimates for comparison purposes only.
+        </p>
+      </div>
+    </div>
+
+    <dialog id="modal" class="modal-content" aria-labelledby="modal-title">
+      <h3 id="modal-title"></h3>
+      <div id="modal-body"></div>
+      <div class="modal-actions">
+        <button type="button" id="modal-proceed-btn" class="modal-btn">
+          Proceed
+        </button>
+      </div>
+    </dialog>
+
+    <template id="card-template">
+      <div class="card" data-target="card">
+        <div class="card-header">
+          <div class="card-header-main">
+            <div class="fintech-name" data-target="fintech-name"></div>
+            <select
+              class="product-select"
+              name="productTier"
+              data-target="product-select"
+            ></select>
+          </div>
+          <div class="rate-badge rate-badge-offset" data-target="rate-badge">
+            0% p.a
+          </div>
+        </div>
+        <div class="card-details">
+          <div
+            class="features-container"
+            data-target="features-container"
+          ></div>
+          <div class="financial-breakdown">
+            <div class="detail-row row-principal">
+              <span class="detail-label">Total Saved</span>
+              <span
+                class="detail-value val-principal"
+                data-target="val-principal"
+              ></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Gross Interest</span>
+              <span
+                class="detail-value val-gross"
+                data-target="val-gross"
+              ></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">WHT (10%)</span>
+              <span
+                class="detail-value val-tax value-negative"
+                data-target="val-tax"
+              ></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Net Interest</span>
+              <span
+                class="detail-value val-net value-positive"
+                data-target="val-net"
+              ></span>
+            </div>
+            <div class="total-row">
+              <span class="total-label">Total Payout</span>
+              <span
+                class="total-value val-total"
+                data-target="val-total"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="feature-row-template">
+      <div class="feature-row">
+        <div class="feature-label-group" data-target="feature-label-group">
+          <span class="feature-dot" data-target="feature-dot"></span>
+          <span class="detail-label" data-target="detail-label"></span>
+        </div>
+        <span
+          class="detail-value feature-value"
+          data-target="detail-value"
+        ></span>
+      </div>
+    </template>
+
+    <template id="warning-row-template">
+      <div class="warning-box" data-target="warning-box">
+        <div class="detail-row">
+          <span class="detail-label">⚠ Important</span>
+          <span class="detail-value" data-target="detail-value"></span>
+        </div>
+      </div>
+    </template>
+
+    <template id="filter-checkbox-template">
+      <label class="filter-option">
+        <input type="checkbox" checked />
+        <span class="fintech-name-label"></span>
+      </label>
+    </template>
 
     <script type="module" src="src/index.ts"></script>
   </body>
