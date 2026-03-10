@@ -24,7 +24,9 @@ export const piggyvest: Fintech = {
         },
         { name: "Minimum Amount", value: "N1000", type: "neutral" },
       ],
-      warnings: ["Lose all accrued interest if withdrawn early"],
+      warnings: [
+        "All earned interest is forfeited if withdrawn before maturity.",
+      ],
       maxDurationDays: 1000,
       calculate: (
         principal: number,

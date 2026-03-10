@@ -16,7 +16,7 @@ export const opay: Fintech = {
         { name: "Top-up", value: "No", type: "neutral" },
         { name: "Minimum Amount", value: "N1000", type: "neutral" },
       ],
-      warnings: ["Lose interest + break fee if withdrawn early"],
+      warnings: ["Early withdrawal forfeits interest and incurs a 1% fee."],
       calculate: (principal: number, duration: number) => {
         const TIER1_LIMIT = 300000;
         const TIER2_RATE = 9;

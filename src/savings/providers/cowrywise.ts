@@ -16,6 +16,7 @@ export const cowrywise: Fintech = {
         { name: "Top-up", value: "Yes", type: "positive" },
         { name: "Minimum Amount", value: "N1000", type: "neutral" },
       ],
+      warnings: ["Funds cannot be withdrawn until maturity."],
       minDurationDays: 90,
       calculate: (
         principal: number,

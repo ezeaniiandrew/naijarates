@@ -16,7 +16,9 @@ export const kuda: Fintech = {
         { name: "Top-up", value: "No", type: "neutral" },
         { name: "Minimum Amount", value: "N1000", type: "neutral" },
       ],
-      warnings: ["Forfeit accrued interest if withdrawn early"],
+      warnings: [
+        "All earned interest is forfeited if withdrawn before maturity.",
+      ],
       calculate: (
         principal: number,
         duration: number,

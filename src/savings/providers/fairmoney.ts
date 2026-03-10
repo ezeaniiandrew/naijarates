@@ -20,7 +20,7 @@ export const fairmoney: Fintech = {
         { name: "Top-up", value: "No", type: "neutral" },
         { name: "Minimum Amount", value: "N1000", type: "neutral" },
       ],
-      warnings: ["Funds locked until maturity date"],
+      warnings: ["Funds cannot be withdrawn until maturity."],
       maxDurationDays: 720,
       calculate: (
         principal: number,
