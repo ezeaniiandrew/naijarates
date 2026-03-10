@@ -547,3 +547,28 @@ dialog::backdrop {
 .disclaimer strong {
   color: var(--text-main);
 }
+
+.last-verified {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.contribute-note {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.5rem;
+}
+
+.contribute-note a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contribute-note a:hover {
+  text-decoration: underline;
+}
