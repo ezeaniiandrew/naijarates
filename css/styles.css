@@ -571,22 +571,22 @@ dialog::backdrop {
 }
 
 .last-verified {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   font-size: 0.8rem;
   color: var(--text-secondary);
   opacity: 0.8;
 
   @media (max-width: 600px) {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 }
 
 .contribute-note {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   font-size: 0.8rem;
   color: var(--text-secondary);
   border-top: 1px solid var(--border-color);
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 
   a {
     color: var(--primary-color);
