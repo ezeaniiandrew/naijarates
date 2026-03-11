@@ -16,7 +16,7 @@ export const piggyvest: Fintech = {
           type: "warning",
         },
         { name: "Compound Interest", value: "No", type: "neutral" },
-        { name: "Minimum Duration", value: "30 days", type: "neutral" },
+        { name: "Minimum Duration", value: "7 days", type: "neutral" },
         {
           name: "Top-up",
           value: "Allowed if duration > 90 days",
