@@ -12,8 +12,8 @@ export const piggyvest: Fintech = {
       features: [
         {
           name: "Withdrawal",
-          value: "Locked until maturity",
-          type: "warning",
+          value: "At maturity",
+          type: "neutral",
         },
         { name: "Compound Interest", value: "No", type: "neutral" },
         { name: "Minimum Duration", value: "7 days", type: "neutral" },
@@ -22,7 +22,7 @@ export const piggyvest: Fintech = {
           value: "Allowed if duration > 90 days",
           type: "positive",
         },
-        { name: "Minimum Amount", value: "N1000", type: "neutral" },
+        { name: "Minimum Amount", value: "₦1000", type: "neutral" },
       ],
       warnings: [
         "All earned interest is forfeited if withdrawn before maturity.",

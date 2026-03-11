@@ -10,11 +10,11 @@ export const opay: Fintech = {
       name: "Fixed",
       supportedTypes: ["onetime"],
       features: [
-        { name: "Withdrawal", value: "At maturity", type: "warning" },
+        { name: "Withdrawal", value: "At maturity", type: "neutral" },
         { name: "Compound Interest", value: "No", type: "neutral" },
         { name: "Minimum Duration", value: "7 days", type: "neutral" },
         { name: "Top-up", value: "No", type: "neutral" },
-        { name: "Minimum Amount", value: "N1000", type: "neutral" },
+        { name: "Minimum Amount", value: "₦1000", type: "neutral" },
       ],
       warnings: ["Early withdrawal forfeits interest and incurs a 1% fee."],
       calculate: (principal: number, duration: number) => {

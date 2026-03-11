@@ -12,13 +12,13 @@ export const fairmoney: Fintech = {
       features: [
         {
           name: "Withdrawal",
-          value: "No withdrawal before maturity",
+          value: "At maturity",
           type: "warning",
         },
         { name: "Compound Interest", value: "No", type: "neutral" },
         { name: "Minimum Duration", value: "7 days", type: "neutral" },
         { name: "Top-up", value: "No", type: "neutral" },
-        { name: "Minimum Amount", value: "N1000", type: "neutral" },
+        { name: "Minimum Amount", value: "₦1000", type: "neutral" },
       ],
       warnings: ["Funds cannot be withdrawn until maturity."],
       maxDurationDays: 720,
